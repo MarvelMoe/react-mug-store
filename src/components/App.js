@@ -5,15 +5,15 @@ import Order from './Order';
 
 class App extends React.Component {
     render() {
-        return (
-            <div className="catch-of-the-day"> 
+        return  <div className="catch-of-the-day"> 
             	<div className="menu">
             		<Header tagline={"OF THE"}/>
             	</div>
             	<Order/>
             	<Inventory/>
-            </div>
-        );
+            </div> 
+            
+       
     }
 }
 
