@@ -22,6 +22,9 @@ class AddMugForm extends React.Component {
       image: this.imageRef.value.value
     }
     this.props.addMug(mug)
+    
+    // Reset form after submission
+    event.currentTarget.reset()
   }
 
     render() {
