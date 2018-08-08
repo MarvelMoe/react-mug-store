@@ -1,16 +1,16 @@
 // This is just some sample data
-const sampleMugs = {
+const mug = {
   mug1: {
     name: "The Toilet Mug",
     image: "/images/toilet-mug.jpg",
     desc:
       "Everyones dreams of drinking from a toilet...heres your chance!.",
-    price: 7.50,
+    price: 7.00,
     status: "available"
   },
 
   mug2: {
-    name: "The Trash Mug",
+    name: "The Garbage Mug",
     image: "/images/trash-mug.jpg",
     desc:
       "Take out the trash while drinking from one at the same time.",
@@ -28,4 +28,4 @@ const sampleMugs = {
   }
 };
 
-export default sampleMugs;
+export default mug;
