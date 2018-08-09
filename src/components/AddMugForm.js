@@ -2,11 +2,11 @@
 import React from 'react';
 
 class AddMugForm extends React.Component {
-  nameRef = React.createRef();
-    priceRef = React.createRef();
-      statusRef = React.createRef();
-       descRef = React.createRef(); 
-         imageRef = React.createRef();
+      nameRef = React.createRef();
+        priceRef = React.createRef();
+          statusRef = React.createRef();
+           descRef = React.createRef(); 
+             imageRef = React.createRef();
 
 
 // Turn inputs into mug object with all the values from them with ref.create()

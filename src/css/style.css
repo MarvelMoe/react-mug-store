@@ -263,7 +263,7 @@ header.top {
   text-align: center;
 }
 header.top h1 {
-  font-size: 14.4rem;
+  font-size: 10rem;
   line-height: 0.7;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -532,7 +532,6 @@ ul.order li span.count span {
 .menu-mug img {
   float: left;
   width: 150px;
-  margin-right: 1rem;
 }
 button,
 input[type=submit] {

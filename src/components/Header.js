@@ -6,9 +6,9 @@ class Header extends React.Component {
     render() {
         return (
             <header className="top">
-            <h1>Mug
-            <span className="ofThe">
-              
+            <h1>
+            Mug
+            <span className="ofThe">        
              </span>
             Day
             </h1>

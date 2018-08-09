@@ -1,16 +1,24 @@
 import React from "react";
-
+import { formatPrice } from "../helpers"
+ 
 
 class Mugs extends React.Component {
     
     render() {
+
+        // Destructuring to set all variables at once
+        const { image, name, price, desc, status } = this.props.details;
+        
         return (
         	<li className="menu-mug">
         		<img src={this.props.details.image} alt={this.props.details.name} />
-        		<h3 className="mug-name">
-					{this.props.details.name}			
-        		</h3>
-                <h2 className="price">${this.props.details.price}</h2>
+        		<h4 className="mug-name">
+					{name}		
+        		</h4>
+                <hr/>    
+                <p>{desc}</p>
+                <h4 className="price">{formatPrice(price)}</h4> 
+                <button>ADD TO CART</button>
         	</li>
             
         );
