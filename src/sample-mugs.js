@@ -6,7 +6,7 @@ const mug = {
     desc:
       "Everyones dreams of drinking from a toilet...heres your chance!.",
     price: 700,
-    status: "available"
+    status: "true"
   },
 
   mug2: {
@@ -15,7 +15,7 @@ const mug = {
     desc:
       "Take out the trash while drinking from one at the same time.",
     price: 900,
-    status: "available"
+    status: "true"
   },
 
   mug3: {
@@ -24,7 +24,7 @@ const mug = {
     desc:
       "Please drink out if this cup with caution",
     price: 1200,
-    status: "unavailable"
+    status: "false"
   }
 };
 
