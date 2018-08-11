@@ -3,7 +3,7 @@ import { formatPrice } from "../helpers"
  
 
 class Mugs extends React.Component {
-    
+
     render() {
 
         // Destructuring to set all variables at once
@@ -20,7 +20,8 @@ class Mugs extends React.Component {
                 <hr/>    
                 <p>{desc}</p>
                 <h4 className="price">{formatPrice(price)}</h4> 
-                <button disabled={!isAvailable} >
+                <button disabled={!isAvailable} 
+                onClick={() => this.props.addToOrder(this.props.index)} >
                 {isAvailable ? "Add To Cart" : "Sold Out!"}
                </button>
         	</li>
