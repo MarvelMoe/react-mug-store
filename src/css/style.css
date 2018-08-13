@@ -447,6 +447,9 @@ ul.order li span.count span {
 .order-title {
   text-align: center;
 }
+.order-list {
+  font-size: .8em
+}
 .mug-edit {
   margin-bottom: 20px;
   border: 2px solid #000;

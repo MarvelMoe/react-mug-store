@@ -50,7 +50,7 @@ class App extends React.Component {
 	            			))}
 	            		</ul>
 	            	</div>
-            	<Order/>
+            	<Order mugs={this.state.mugs} order={this.state.order} />
             	<Inventory 
             	addMug={this.addMug}
             	loadSampleMugs={this.loadSampleMugs}
