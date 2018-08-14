@@ -5,9 +5,13 @@ class Order extends React.Component {
 	renderOrder = (key) => {
 		const mug = this.props.mugs[key];
 		const count = this.props.order[key];
+		const isAvailable = mug.status === "true";
+		if(!isAvailable) {
+			return <li key={key}>Sorry {mug ? mug.name : "mug"} is not available</li>;
+		}
 
 		return (
-				<li className="order-list">
+				<li key={key} className="order-list">
 					 {count} - {mug.name}  
 				- 	{formatPrice(count + mug.price)}  
 					<hr/>
@@ -20,7 +24,7 @@ class Order extends React.Component {
     	const total = orderIds.reduce((prevTotal, key) =>{
     		 const mug = this.props.mugs[key];
     		 const count = this.props.order[key];
-    		 const isAvailable = mug && mug.status === "true"
+    		 const isAvailable = mug && mug.status === "true";
 	    	if (isAvailable) {
 	    		return prevTotal + (count + mug.price)
 	    	}
@@ -30,12 +34,12 @@ class Order extends React.Component {
         return (
           <div className="order-wrap">
           <h2>Order</h2>
-          <ul>
+          <ul className="order">
             {orderIds.map(this.renderOrder)} 
 
           </ul>
          
-	          <div className="total">
+	          <div className="order-total">
 	          Total:
 	          	<strong>{formatPrice(total)}</strong>
 	          </div>

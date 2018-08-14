@@ -450,6 +450,9 @@ ul.order li span.count span {
 .order-list {
   font-size: .8em
 }
+.order-total {
+  padding: 1em .2em;
+}
 .mug-edit {
   margin-bottom: 20px;
   border: 2px solid #000;
