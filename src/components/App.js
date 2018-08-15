@@ -4,6 +4,7 @@ import Inventory from './Inventory';
 import Order from './Order';
 import mug from '../sample-mugs';
 import Mugs from './Mugs';
+import base from '../base';
 
 class App extends React.Component {
 	// Set Initial State
@@ -11,6 +12,15 @@ class App extends React.Component {
 		mugs: {},
 		order: {}
 	};
+
+	componentDidMount() {
+ 	 const { params } = this.props.match;
+
+	 this.ref = base.syncState(`${params.storeId}/mugs`, {
+		  context: this,
+		  state: "mugs"
+		 });
+	}
 
 	addMug = mug => {
 		
@@ -24,7 +34,6 @@ class App extends React.Component {
 	loadSampleMugs = () => {
 		this.setState({ mugs: mug }) 
 	}
-
 
 	addToOrder = (key) => {
 		// get copy of state
