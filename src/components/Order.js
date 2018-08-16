@@ -5,7 +5,9 @@ class Order extends React.Component {
 	renderOrder = (key) => {
 		const mug = this.props.mugs[key];
 		const count = this.props.order[key];
-		const isAvailable = mug.status === "true";
+		const isAvailable = mug && mug.status === "true";
+		
+		if (!mug) return null;
 		if(!isAvailable) {
 			return <li key={key}>Sorry {mug ? mug.name : "mug"} is not available</li>;
 		}
