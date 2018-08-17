@@ -44,6 +44,15 @@ class App extends React.Component {
 		this.setState({mugs})
 	}
 
+	updateMug = (key, updatedMug) => {
+
+		const mugs = { ...this.state.mugs }
+
+		mugs[key] = updatedMug;
+
+		this.setState({ mugs });
+	}
+
 	loadSampleMugs = () => {
 		this.setState({ mugs: mug }) 
 	}
@@ -75,8 +84,11 @@ class App extends React.Component {
             	<Order mugs={this.state.mugs} order={this.state.order} />
             	<Inventory 
             	addMug={this.addMug}
+            	updateMug={this.updateMug}
             	loadSampleMugs={this.loadSampleMugs}
+            	mug={this.state.mugs}
             	 />
+            	}
              </div>     	            
         	)
        

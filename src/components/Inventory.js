@@ -1,5 +1,7 @@
 import React from 'react';
 import AddMugForm from './AddMugForm';
+import EditForm from './EditForm';
+
 
 class Inventory extends React.Component {
   
@@ -8,6 +10,13 @@ class Inventory extends React.Component {
         return (
             <div className="inventory">
             <h2>Inventory</h2>
+            {Object.keys(this.props.mug).map(key =>  (
+                <EditForm 
+                key={key}
+                index={key}
+                mug={this.props.mug[key]}
+                updateMug={this.props.updateMug} />
+                ))}
             <AddMugForm addMug={this.props.addMug} />
             <button onClick={this.props.loadSampleMugs} >
             	Load mugs
