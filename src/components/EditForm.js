@@ -6,7 +6,7 @@ class EditForm extends React.Component {
 			...this.props.mug,
 			[event.currentTarget.name]: event.currentTarget.value
 		}
-		this.props.updatedMug(this.props.index, updatedMug)
+		this.props.updateMug(this.props.index, updatedMug)
 	}
 	render(){
 		return (
@@ -19,7 +19,16 @@ class EditForm extends React.Component {
    			</select>
 			<textarea type="text" name="desc" onChange={this.handleChange} value={this.props.mug.desc}></textarea>
 			<input type="text" name="image" onChange={this.handleChange} value={this.props.mug.image}/>
+
+			 <button  
+			 onClick={() => this.props.deleteMug(this.props.index)} >
+			 Delete From Cart
+			 </button>
+
+
 		</div>
+
+
 		)
 	}
 }

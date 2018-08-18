@@ -45,12 +45,21 @@ class App extends React.Component {
 	}
 
 	updateMug = (key, updatedMug) => {
-
+		// get a copy of state
 		const mugs = { ...this.state.mugs }
 
 		mugs[key] = updatedMug;
-
+		// update state
 		this.setState({ mugs });
+	}
+
+	deleteMug = key => {
+		// get a copy of state
+		const mugs = { ...this.state.mugs }
+	
+		mugs[key] = null;
+		// update state
+		this.setState({ mugs })
 	}
 
 	loadSampleMugs = () => {
@@ -85,6 +94,7 @@ class App extends React.Component {
             	<Inventory 
             	addMug={this.addMug}
             	updateMug={this.updateMug}
+            	deleteMug={this.deleteMug}
             	loadSampleMugs={this.loadSampleMugs}
             	mug={this.state.mugs}
             	 />

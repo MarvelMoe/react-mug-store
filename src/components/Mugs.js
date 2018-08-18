@@ -24,6 +24,7 @@ class Mugs extends React.Component {
                 onClick={() => this.props.addToOrder(this.props.index)} >
                 {isAvailable ? "Add To Cart" : "Sold Out!"}
                </button>
+              
         	</li>
         );
     }

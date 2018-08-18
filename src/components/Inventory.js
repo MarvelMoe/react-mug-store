@@ -15,7 +15,8 @@ class Inventory extends React.Component {
                 key={key}
                 index={key}
                 mug={this.props.mug[key]}
-                updateMug={this.props.updateMug} />
+                updateMug={this.props.updateMug}
+                deleteMug={this.props.deleteMug} />
                 ))}
             <AddMugForm addMug={this.props.addMug} />
             <button onClick={this.props.loadSampleMugs} >
