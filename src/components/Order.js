@@ -17,6 +17,7 @@ class Order extends React.Component {
 					 {count} - {mug.name}  
 				- 	{formatPrice(count + mug.price)}  
 					<hr/>
+					 <button onClick={() => this.props.deleteFromOrder(key)}>&times;</button>		 
 				</li>
 		)
 	};

@@ -20,12 +20,6 @@ class EditForm extends React.Component {
 			<textarea type="text" name="desc" onChange={this.handleChange} value={this.props.mug.desc}></textarea>
 			<input type="text" name="image" onChange={this.handleChange} value={this.props.mug.image}/>
 
-			 <button  
-			 onClick={() => this.props.deleteMug(this.props.index)} >
-			 Delete From Cart
-			 </button>
-
-
 		</div>
 
 

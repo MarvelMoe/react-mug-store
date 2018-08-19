@@ -13,7 +13,6 @@ class AddMugForm extends React.Component {
   createMug = event => {
 
 		event.preventDefault();
-
     const mug = {
       name: this.nameRef.value.value,
       price: parseFloat(this.priceRef.value.value),

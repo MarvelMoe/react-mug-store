@@ -56,7 +56,7 @@ class App extends React.Component {
 	deleteMug = key => {
 		// get a copy of state
 		const mugs = { ...this.state.mugs }
-	
+		// ensure it gets removed from firebase
 		mugs[key] = null;
 		// update state
 		this.setState({ mugs })
@@ -71,7 +71,16 @@ class App extends React.Component {
 		const order = { ...this.state.order }
 		// add to order or update order
 		order[key] =  order[key] + 1 || 1;
-		// call setState to update obkject
+		// call setState to update object
+		this.setState({ order })
+	}
+
+	deleteFromOrder = (key) => {
+		// get copy of state
+		const order = { ...this.state.order }
+		// remove order
+		delete order[key];
+		// call setState to update object
 		this.setState({ order })
 	}
 
@@ -90,7 +99,7 @@ class App extends React.Component {
 	            			))}
 	            		</ul>
 	            	</div>
-            	<Order mugs={this.state.mugs} order={this.state.order} />
+            	<Order mugs={this.state.mugs} order={this.state.order}   deleteFromOrder={this.deleteFromOrder} />
             	<Inventory 
             	addMug={this.addMug}
             	updateMug={this.updateMug}
