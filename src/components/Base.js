@@ -3,9 +3,9 @@ import firebase from 'firebase';
 
 // Firebase App
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyBzzCZLKIY_nNm8qafpUgVyaNOYFpybISE",
-    authDomain: "mug-of-the-day.firebaseapp.com",
-    databaseURL: "https://mug-of-the-day.firebaseio.com"
+	    apiKey: "AIzaSyBzzCZLKIY_nNm8qafpUgVyaNOYFpybISE",
+	    authDomain: "mug-of-the-day.firebaseapp.com",
+	    databaseURL: "https://mug-of-the-day.firebaseio.com"
 })
 
 // Rebase Bindings
