@@ -7,24 +7,43 @@ class Order extends React.Component {
 		const mug = this.props.mugs[key];
 		const count = this.props.order[key];
 		const isAvailable = mug && mug.status === "true";
+		const transitionOptions = {
+		  classNames: "order",
+		  key,
+		  timeout: { enter: 500, exit: 500 }
+		};
 		
 		if (!mug) return null;
 		if(!isAvailable) {
 			return (
-			 <li key={key}>
-				 Sorry {mug ? mug.name : "mug"} is not available
-			 </li>
+				<CSSTransition {...transitionOptions}>
+				 <li key={key}>
+					 Sorry {mug ? mug.name : "mug"} is not available
+				 </li>
+			 	</CSSTransition>
 			 )
 		}
 
 		return (
-			<CSSTransition classNames="order" key={key} timeout={{enter:250, exit:250}}>
-				<li key={key} className="order-list">
-					 {count} - {mug.name}  
-				- 	{formatPrice(count + mug.price)}  
-					<hr/>
-					 <button onClick={() => this.props.deleteFromOrder(key)}>&times;</button>		 
-				</li>
+			<CSSTransition {...transitionOptions}>
+			  <li key={key}>
+			    <span>
+			      <TransitionGroup component="span" className="count">
+			        <CSSTransition
+			          classNames="count"
+			          key={count}
+			          timeout={{ enter: 500, exit: 500 }}
+			        >
+			          <span>{count}</span>
+			        </CSSTransition>
+			      </TransitionGroup>
+			      lbs {mug.name}
+			      {formatPrice(count * mug.price)}
+			      <button onClick={() => this.props.deleteFromOrder(key)}>
+			        &times;
+			      </button>
+			    </span>
+			  </li>
 			</CSSTransition>
 		)
 	};
@@ -42,14 +61,13 @@ class Order extends React.Component {
 	    },0);
 
         return (
-          <div className="order-wrap">
-          <h2>Order</h2>
-          <TransitionGroup component="ul" className="order">
-            {orderIds.map(this.renderOrder)} 
-          </TransitionGroup>
-         
-	          <div className="order-total">
-	          Total:
+           <div className="order-wrap">
+	          <h2>Order</h2>
+	          <TransitionGroup component="ul" className="order">
+	            {orderIds.map(this.renderOrder)} 
+	          </TransitionGroup>    
+		          <div className="order-total">
+	         	 Total:
 	          	<strong>{formatPrice(total)}</strong>
 	          </div>
           </div>
