@@ -1,8 +1,15 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import {formatPrice} from "../helpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class Order extends React.Component {
+	
+	static propTypes = {
+		mugs: PropTypes.object,
+		order: PropTypes.object,
+		deleteFromOrder: PropTypes.func
+	}
 	renderOrder = (key) => {
 		const mug = this.props.mugs[key];
 		const count = this.props.order[key];

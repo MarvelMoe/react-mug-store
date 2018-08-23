@@ -1,7 +1,21 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class EditForm extends React.Component {
-	handleChange = (event) => {
+
+	static propTypes = {	
+		mug: PropTypes.shape({
+			image: PropTypes.string,
+			name: PropTypes.string, 
+			desc: PropTypes.string,
+			status: PropTypes.string,
+			price: PropTypes.number
+		}),
+		index: PropTypes.string,
+		updateMug: PropTypes.func
+	}
+
+	handleChange = (event) => {	
 		const updatedMug = {
 			...this.props.mug,
 			[event.currentTarget.name]: event.currentTarget.value

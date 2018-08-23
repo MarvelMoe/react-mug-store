@@ -1,12 +1,16 @@
-
 import React from 'react';
+import PropTypes from "prop-types";
 
 class AddMugForm extends React.Component {
       nameRef = React.createRef();
-        priceRef = React.createRef();
-          statusRef = React.createRef();
-           descRef = React.createRef(); 
-             imageRef = React.createRef();
+      priceRef = React.createRef();
+      statusRef = React.createRef();
+      descRef = React.createRef(); 
+      imageRef = React.createRef();
+
+      static propTypes = {
+        addMug: PropTypes.func
+      }
 
 
 // Turn inputs into mug object with all the values from them with ref.create()

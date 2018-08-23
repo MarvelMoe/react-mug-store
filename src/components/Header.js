@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 
 
 class Header extends React.Component {
-  
-
     render() {
         return (
             <header className="top">
