@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import AddMugForm from './AddMugForm';
 import EditForm from './EditForm';
+import Login from './Login';
 
 
 class Inventory extends React.Component {
@@ -12,7 +13,13 @@ static propTypes = {
     deleteMug: PropTypes.func,
     loadSampleMugs: PropTypes.func
 }
+
+authenticate = () => {
+    console.log("you're logged in")
+}
+
     render() {
+        return <Login authenticate={this.authenticate} />
         return (
             <div className="inventory">
                 <h2>Inventory</h2>
