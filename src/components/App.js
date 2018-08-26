@@ -104,15 +104,19 @@ class App extends React.Component {
 	            			))}
 	            		</ul>
 	            	</div>
-            	<Order mugs={this.state.mugs} order={this.state.order}   deleteFromOrder={this.deleteFromOrder} />
+            	<Order 
+            	mugs={this.state.mugs} 
+            	order={this.state.order}  
+            	deleteFromOrder={this.deleteFromOrder} 
+            	/>
             	<Inventory 
             	addMug={this.addMug}
             	updateMug={this.updateMug}
             	deleteMug={this.deleteMug}
             	loadSampleMugs={this.loadSampleMugs}
             	mug={this.state.mugs}
+            	store={this.props.match.params.storeId}
             	 />
-            	}
              </div>     	            
         	)
        
