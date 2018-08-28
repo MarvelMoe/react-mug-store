@@ -115,7 +115,7 @@ class App extends React.Component {
             	deleteMug={this.deleteMug}
             	loadSampleMugs={this.loadSampleMugs}
             	mug={this.state.mugs}
-            	store={this.props.match.params.storeId}
+            	storeId={this.props.match.params.storeId}
             	 />
              </div>     	            
         	)
